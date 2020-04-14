@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Switch, Button } from 'react-native';
-import { createStackNavigator } from 'react-navigation-stack';
+//import { createStackNavigator } from 'react-navigation-stack';
 
-import * as FileSystem from 'expo-file'
+//import * as FileSystem from 'expo-file'
 
-const App = props => {
+const App = () => {
   const [check, setCheck] = useState(false)
 
-  const write = () =>{
-    console.warn('write...')
-  }
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Welcome!</Text>
-      <Button title='Push' onPress={()=>props.navigation.push('App')}/>
+      {/* <Button title='Push' onPress={()=>props.navigation.push('App')}/> */}
       <Switch value={check} onValueChange={()=>setCheck(!check)}/>
       {
         check?
@@ -37,11 +34,11 @@ const styles = StyleSheet.create({
   }
 });
 
-App.navigationOptions = {
-  title: 'Test'
-}
-const AppNavigator = createStackNavigator({
-  App,
-})
+// App.navigationOptions = {
+//   title: 'Test'
+// }
+// const AppNavigator = createStackNavigator({
+//   App,
+// })
 
 export default App
